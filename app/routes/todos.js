@@ -6,13 +6,10 @@ export default Ember.Route.extend({
   },
   actions: {
     createTodo: function(newToDo) {
-
         var todo = this.store.createRecord('todo', {
             title: newToDo,
             isCompleted: false
         });
-
-        this.controllerFor('todos').set('newToDo', '');
 
         todo.save();
     },
