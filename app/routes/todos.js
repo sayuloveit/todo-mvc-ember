@@ -8,7 +8,8 @@ export default Ember.Route.extend({
     createTodo: function(newToDo) {
       var todo = this.store.createRecord('todo', {
           title: newToDo,
-          isCompleted: false
+          isCompleted: false,
+          timestamp: new Date()
       });
 
       todo.save();
